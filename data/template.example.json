@@ -1,0 +1,34 @@
+{
+ "gridStart": "07:00",
+ "gridEnd": "24:00",
+ "placeStart": "08:30",
+ "placeEnd": "21:00",
+ "slotMinutes": 30,
+ "gapMinutes": 15,
+ "lightDay": 6,
+ "categories": {
+  "study": {"name": "Study", "color": "#6c8ebf"},
+  "workout": {"name": "Workout", "color": "#7a9e7e"},
+  "hobby": {"name": "Hobby", "color": "#9a87b8"},
+  "chores": {"name": "Chores", "color": "#a07c94"},
+  "lecture": {"name": "Lecture", "color": "#6f8f9c"},
+  "free": {"name": "Free time", "color": "#b07a86"},
+  "meal": {"name": "Meal", "color": "#6b6e74"},
+  "other": {"name": "Other", "color": "#808a96"}
+ },
+ "protected": [
+  {"title": "Lunch", "category": "meal", "start": "12:00", "minutes": 45, "days": [0, 1, 2, 3, 4, 5, 6], "nudge": 60},
+  {"title": "Dinner", "category": "meal", "start": "18:00", "minutes": 45, "days": [0, 1, 2, 3, 4, 5, 6], "nudge": 60},
+  {"title": "Free time", "category": "free", "start": "21:00", "minutes": 180, "days": [0, 1, 2, 3, 4, 5, 6]}
+ ],
+ "goals": [
+  {"id": "study", "title": "Study", "category": "study", "count": 4, "minutes": 120, "days": [0, 1, 2, 3, 4], "prefer": "morning", "lightOk": false, "priority": 2, "fit": "flex", "noCap": false, "travelBefore": 0, "travelAfter": 0},
+  {"id": "workout", "title": "Workout", "category": "workout", "count": 3, "minutes": 60, "days": [0, 1, 2, 3, 4, 5, 6], "prefer": "afternoon", "lightOk": true, "priority": 2, "fit": "shorten", "noCap": true, "travelBefore": 15, "travelAfter": 15},
+  {"id": "hobby", "title": "Hobby", "category": "hobby", "count": 1, "minutes": 120, "days": [0, 1, 2, 3, 4, 5, 6], "prefer": "evening", "lightOk": true, "priority": 3, "fit": "flex", "noCap": false, "travelBefore": 0, "travelAfter": 0},
+  {"id": "chores", "title": "Chores", "category": "chores", "count": 1, "minutes": 90, "days": [5, 6], "prefer": "any", "lightOk": true, "priority": 3, "fit": "flex", "noCap": false, "travelBefore": 0, "travelAfter": 0}
+ ],
+ "conflicts": [],
+ "exportExclude": ["meal"],
+ "claudeWishes": "",
+ "dailyCapMinutes": 420
+}

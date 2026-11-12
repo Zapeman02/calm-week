@@ -1,0 +1,208 @@
+{
+  "gridStart": "07:00",
+  "gridEnd": "24:00",
+  "placeStart": "08:30",
+  "placeEnd": "21:00",
+  "slotMinutes": 30,
+  "gapMinutes": 15,
+  "dailyCapMinutes": 420,
+  "lightDay": 6,
+  "categories": {
+    "study": {
+      "name": "Study",
+      "color": "#6c8ebf"
+    },
+    "run": {
+      "name": "Running",
+      "color": "#7a9e7e"
+    },
+    "gym": {
+      "name": "Gym",
+      "color": "#b48a6e"
+    },
+    "hobby": {
+      "name": "Hobby",
+      "color": "#9a87b8"
+    },
+    "club": {
+      "name": "Club",
+      "color": "#c2a65a"
+    },
+    "mealprep": {
+      "name": "Meal prep",
+      "color": "#a07c94"
+    },
+    "lecture": {
+      "name": "Lecture",
+      "color": "#6f8f9c"
+    },
+    "free": {
+      "name": "Free time",
+      "color": "#b07a86"
+    },
+    "meal": {
+      "name": "Meal",
+      "color": "#6b6e74"
+    },
+    "other": {
+      "name": "Other",
+      "color": "#808a96"
+    }
+  },
+  "protected": [
+    {
+      "title": "Lunch",
+      "category": "meal",
+      "start": "12:00",
+      "minutes": 45,
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "nudge": 60
+    },
+    {
+      "title": "Dinner",
+      "category": "meal",
+      "start": "18:00",
+      "minutes": 45,
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "nudge": 60
+    },
+    {
+      "title": "Free time",
+      "category": "free",
+      "start": "21:00",
+      "minutes": 180,
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "study",
+      "title": "Study",
+      "category": "study",
+      "count": 5,
+      "minutes": 120,
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "prefer": "morning"
+    },
+    {
+      "id": "run",
+      "title": "Running",
+      "category": "run",
+      "count": 2,
+      "minutes": 120,
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "prefer": "afternoon",
+      "lightOk": true
+    },
+    {
+      "id": "gym",
+      "title": "Gym",
+      "category": "gym",
+      "count": 2,
+      "minutes": 120,
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "prefer": "evening"
+    },
+    {
+      "id": "hobby",
+      "title": "Hobby",
+      "category": "hobby",
+      "count": 2,
+      "minutes": 180,
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "prefer": "afternoon"
+    },
+    {
+      "id": "club",
+      "title": "Club",
+      "category": "club",
+      "count": 5,
+      "minutes": 120,
+      "days": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "prefer": "afternoon"
+    },
+    {
+      "id": "mealprep",
+      "title": "Meal prep",
+      "category": "mealprep",
+      "count": 1,
+      "minutes": 180,
+      "days": [
+        5,
+        6
+      ],
+      "prefer": "afternoon",
+      "lightOk": true
+    }
+  ],
+  "conflicts": [
+    [
+      "run",
+      "gym"
+    ]
+  ],
+  "exportExclude": [
+    "meal"
+  ]
+}

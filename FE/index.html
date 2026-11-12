@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calm Week</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="icon-64.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="nav">
+      <button id="prev" class="icon" aria-label="Previous week">‹</button>
+      <h1 id="week-label"></h1>
+      <button id="next" class="icon" aria-label="Next week">›</button>
+      <button id="today" class="ghost">Today</button>
+    </div>
+    <p id="status" class="status"></p>
+    <div class="actions">
+      <button id="undo" class="ghost" title="Undo (⌘Z)">Undo</button>
+      <button id="settings-open" class="ghost">Settings</button>
+      <button id="claude-open" class="ghost">Ask Claude</button>
+      <button id="arrange" class="primary">Rearrange</button>
+    </div>
+  </header>
+  <main class="layout">
+    <aside class="tray">
+      <h2>To place</h2>
+      <div id="tray-items" class="tray-items"></div>
+      <p class="hint">Drag onto the week.<br>Drag on empty space to add something.</p>
+    </aside>
+    <section class="calendar">
+      <div id="days-head" class="days-head"></div>
+      <div id="scroll" class="scroll">
+        <div class="grid">
+          <div id="gutter" class="gutter"></div>
+          <div id="days" class="days"><div id="layer" class="layer"></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="popover" class="popover" hidden></div>
+  <div id="claude" class="sheet-backdrop" hidden>
+    <form class="sheet small" id="claude-form">
+      <h2>Ask Claude</h2>
+      <label class="field">Anything to keep in mind this week? (optional)
+        <textarea id="wish" rows="3" placeholder="Lighter week, I'm tired. Exam on Friday."></textarea>
+      </label>
+      <p class="note" id="claude-note">Claude suggests new times for flexible blocks. Fixed, lectures and free time stay. Undo brings the old week back.</p>
+      <div class="foot"><button type="button" class="ghost" id="claude-cancel">Cancel</button><button type="submit" class="primary" id="claude-ask">Suggest</button></div>
+    </form>
+  </div>
+  <div id="settings" class="sheet-backdrop" hidden>
+    <form class="sheet" id="settings-form">
+      <h2>Settings</h2>
+      <section class="group">
+        <h3>Activities</h3>
+        <div id="goal-rows" class="goal-rows"></div>
+        <button type="button" id="goal-add" class="ghost add">+ Add activity</button>
+      </section>
+      <section class="group">
+        <h3>Day rhythm</h3>
+        <div class="goal-row"><span class="name">Day starts</span><input id="place-start" class="clock" type="time" step="900"></div>
+        <div class="goal-row"><span class="name">Plan until</span><input id="place-end" class="clock" type="time" step="900"></div>
+        <div id="protected-rows" class="goal-rows"></div>
+        <div class="goal-row"><span class="name">Max planned per day</span>
+          <div class="stepper" id="cap-steps"><button type="button" data-d="-30">−</button><span id="cap"></span><button type="button" data-d="30">+</button></div>
+        </div>
+      </section>
+      <section class="group">
+        <h3>Connections</h3>
+        <label class="field">TimeEdit link (.ics)
+          <input id="timeedit" type="url" placeholder="https://cloud.timeedit.net/…/ri….ics">
+        </label>
+        <label class="field">Standing wishes for Claude
+          <textarea id="claude-wishes" rows="2" maxlength="300" placeholder="Training in the afternoon. Keep Sunday calm."></textarea>
+        </label>
+      </section>
+      <div class="foot sticky"><button type="button" class="ghost" id="settings-reset" title="The week you are looking at goes back to your defaults and gets re-planned">Reset this week</button><span class="note">Saved on this computer. Your planned weeks stay as they are.</span><span><button type="button" class="ghost" id="settings-cancel">Cancel</button><button type="submit" class="primary">Save</button></span></div>
+    </form>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+data/state.json
+data/config.json
+data/server.log
+data/.*.tmp
+e2e/screenshots/
+.DS_Store
+data/template.json
+Calm Week.app/
